@@ -1,0 +1,68 @@
+data:
+	h36m:
+	mpii:
+lib:
+	core:
+		config.py
+		evaluate.py
+			from lib.core.inference import get_max_preds
+		function.py
+			from lib.core.loss import get_result_func
+			from lib.utils.img_utils import trans_coords_from_patch_to_org_3d
+		inference.py
+			from lib.utils.transforms import transform_preds
+			from lib.utils.cameras import load_cameras
+			from lib.utils.cameras import Camera
+		loss.py
+
+	dataset:
+		h36m.py
+			from lib.dataset.JointDataset import JointsDataset, H36M_NAMES, MPII_NAMES
+			from lib.utils.prep_h36m import CamBackProj, compute_similarity_transform
+			from lib.utils.data_utils import define_actions
+			from lib.utils.img_utils import get_single_patch_sample
+		JointDatasset.py
+			from lib.core.loss import get_label_func
+			from lib.utils.augmentation import load_occluders
+		mpii.py
+			from lib.dataset.JointDataset import JointsDataset
+			from lib.utils.img_utils import get_single_patch_sample
+			from lib.utils.utils import calc_kpt_bound
+	models:
+		poSEnet.py
+	utils:
+		augmentation.py
+		cameras.py
+		data_utils
+			from lib.utils.cameras import Camera
+		img_utils.py
+			from lib.core.loss import get_joint_location_result, generate_joint_location_label
+
+			from lib.utils.utils import calc_total_skeleton_length
+			from lib.utils.transforms import get_affine_transform
+			from lib.utils.augmentation import occlude_with_objects
+			from lib.utils.triangulation import iterative_LS_triangulation
+			from lib.utils.prep_h36m import from_worldjt_to_imagejt
+		prep_h36m.py
+		transforms.py
+		triangulation.py
+		utils.py
+			from lib.core.config import get_model_name
+		vis.py
+src:
+	train.py
+		from lib.core.config import config
+		from lib.core.config import update_config
+		from lib.core.config import update_dir
+		from lib.core.config import get_model_name
+
+		from lib.core.function import train
+		from lib.core.function import validate, evaluate
+
+		from lib.utils.utils import get_optimizer
+		from lib.utils.utils import save_checkpoint
+		from lib.utils.utils import create_logger
+
+		import lib.core.loss as loss
+		import lib.dataset as dataset
+		import lib.models as models
