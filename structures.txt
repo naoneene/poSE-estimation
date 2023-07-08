@@ -1,6 +1,15 @@
 data:
 	h36m:
 	mpii:
+experiments:
+	h36m:
+		eval.yaml
+		train.yaml
+		valid.yaml
+	mpii:
+		train.yaml
+		valid.yaml
+	mpii:
 lib:
 	core:
 		config.py
