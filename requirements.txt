@@ -1,11 +1,11 @@
 pyyaml
 h5py
 easydict
-matplotlib
 scipy
 scikit-learn
 scikit-image
 numpy
+matplotlib
 pretrainedmodels
 opencv-python
 ipdb

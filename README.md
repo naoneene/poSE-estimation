@@ -13,7 +13,7 @@ Under Protocol #1 (mean per-joint position error) and Protocol #2 (mean-per-join
 
 ### Requirements
 
-This repository is build upon Python 3.9.12 and Pytorch 1.4.0 on Ubuntu 20.04 LTS. NVIDIA GPUs are needed to train and test. We recommend installing Python 3.9.12 from [Anaconda](https://www.anaconda.com/), and installing PyTorch (>= 1.1.0) following guide on the [official instructions](https://pytorch.org/) according to your specific CUDA version. See [`requirements.txt`]() for other dependencies.
+This repository is build upon Python 3.9.12 and Pytorch 1.4.0 on Ubuntu 20.04 LTS. NVIDIA GPUs are needed to train and test. We recommend installing Python 3.9.12 from [Anaconda](https://www.anaconda.com/), and installing lastest PyTorch following guide on the [official instructions](https://pytorch.org/) according to your specific CUDA version. See [`requirements.txt`]() for other dependencies.
 
 ## Quick start
 
